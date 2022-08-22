@@ -15,6 +15,7 @@ function Total() {
         return <Card key ={idx} city = {el[0]} local={el[1]} currdata={el[2]} />
       })}
     </div>
+    
   )
 }
 
