@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Local from './pages/local'
+import Total from './pages/total'
+import Bookmarked from './pages/bookmarked'
+import { Route, Routes, Link } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Local/>}/>
+        <Route path="total" element={<Total/>}/>
+        <Route path="bookmarked" element={<Bookmarked/>}/>
+      </Routes>
+      <nav>
+        <Link to="/">내 지역 보기</Link> 
+        <Link to="/total">전체 시도 보기</Link>
+        <Link to="/bookmarked">즐겨찾기</Link>
+      </nav>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
